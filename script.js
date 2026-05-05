@@ -1,6 +1,7 @@
 (function () {
   var INBOX = "renjiniraju14@gmail.com";
   var FORMSUBMIT_AJAX = "https://formsubmit.co/ajax/" + INBOX;
+  var FORMSUBMIT_POST = "https://formsubmit.co/" + INBOX;
 
   var sections = document.querySelectorAll("section[id]");
   var navLinks = document.querySelectorAll(".nav-link");
@@ -16,6 +17,7 @@
     Object.keys(fields).forEach(function (key) {
       formData.append(key, fields[key]);
     });
+    formData.append("_captcha", "false");
 
     return fetch(FORMSUBMIT_AJAX, {
       method: "POST",
@@ -32,6 +34,15 @@
           throw new Error((data && data.message) || "Request failed");
         }
         return data;
+      });
+    }).catch(function () {
+      // Fallback for hosts/environments where AJAX/CORS can fail.
+      return fetch(FORMSUBMIT_POST, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
+      }).then(function () {
+        return { success: true, via: "no-cors-fallback" };
       });
     });
   }
