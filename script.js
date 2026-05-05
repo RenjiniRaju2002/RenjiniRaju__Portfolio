@@ -1,6 +1,6 @@
 (function () {
   var INBOX = "renjiniraju14@gmail.com";
-  var FORMSUBMIT_AJAX = "https://formsubmit.co/ajax/" + encodeURIComponent(INBOX);
+  var FORMSUBMIT_AJAX = "https://formsubmit.co/ajax/" + INBOX;
 
   var sections = document.querySelectorAll("section[id]");
   var navLinks = document.querySelectorAll(".nav-link");
@@ -12,13 +12,14 @@
   var contactForm = document.getElementById("contactForm");
 
   function sendToInbox(fields) {
+    var formData = new FormData();
+    Object.keys(fields).forEach(function (key) {
+      formData.append(key, fields[key]);
+    });
+
     return fetch(FORMSUBMIT_AJAX, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(fields),
+      body: formData,
     }).then(function (res) {
       return res.text().then(function (text) {
         var data = {};
