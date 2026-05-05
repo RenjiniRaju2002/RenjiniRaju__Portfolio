@@ -12,6 +12,50 @@
   var toTop = document.getElementById("toTop");
   var contactForm = document.getElementById("contactForm");
 
+  function postToInboxViaForm(fields) {
+    return new Promise(function (resolve, reject) {
+      try {
+        var frameId = "formsubmit_silent_frame";
+        var frame = document.getElementById(frameId);
+        if (!frame) {
+          frame = document.createElement("iframe");
+          frame.id = frameId;
+          frame.name = frameId;
+          frame.style.display = "none";
+          frame.setAttribute("aria-hidden", "true");
+          document.body.appendChild(frame);
+        }
+
+        var form = document.createElement("form");
+        form.method = "POST";
+        form.action = FORMSUBMIT_POST;
+        form.target = frameId;
+        form.style.display = "none";
+
+        Object.keys(fields).forEach(function (key) {
+          var input = document.createElement("input");
+          input.type = "hidden";
+          input.name = key;
+          input.value = fields[key];
+          form.appendChild(input);
+        });
+
+        var captcha = document.createElement("input");
+        captcha.type = "hidden";
+        captcha.name = "_captcha";
+        captcha.value = "false";
+        form.appendChild(captcha);
+
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+        resolve({ success: true, via: "iframe-fallback" });
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+
   function sendToInbox(fields) {
     var formData = new FormData();
     Object.keys(fields).forEach(function (key) {
@@ -43,6 +87,9 @@
         body: formData,
       }).then(function () {
         return { success: true, via: "no-cors-fallback" };
+      }).catch(function () {
+        // Last fallback: silent native form POST in a hidden iframe.
+        return postToInboxViaForm(fields);
       });
     });
   }
