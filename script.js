@@ -371,7 +371,7 @@
         name: name,
         email: email,
         message: msg,
-        _subject: "Portfolio contact: " + name,
+        _template: "table",
       })
         .then(function (data) {
           if (formSubmitLooksOk(data)) {
@@ -390,7 +390,7 @@
               name: name,
               email: email,
               message: msg,
-              _subject: "Portfolio contact: " + name,
+              _template: "table",
             });
             if (formStatus) {
               formStatus.textContent =
