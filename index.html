@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renjini Raju | Junior Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar" id="siteSidebar" aria-label="Primary" aria-hidden="true">
+    <a href="#home" class="sidebar__brand">Renjini Raju</a>
+    <nav class="sidebar__nav">
+      <a href="#home" class="nav-link active" data-section="home">
+        <span class="nav-link__icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21a1 1 0 01-1 1h-5v-8H9v8H4a1 1 0 01-1-1V9.5z"/></svg>
+        </span>
+        Home
+      </a>
+      <a href="#about" class="nav-link" data-section="about">
+        <span class="nav-link__icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </span>
+        About Me
+      </a>
+      <a href="#skills" class="nav-link" data-section="skills">
+        <span class="nav-link__icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </span>
+        Skills
+      </a>
+      <a href="#projects" class="nav-link" data-section="projects">
+        <span class="nav-link__icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+        </span>
+        Projects
+      </a>
+      <a href="#experience" class="nav-link" data-section="experience">
+        <span class="nav-link__icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        </span>
+        Experience
+      </a>
+      <a href="#certifications" class="nav-link" data-section="certifications">
+        <span class="nav-link__icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12h6M9 16h4M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7l-5-5z"/><path d="M14 2v5h5"/></svg>
+        </span>
+        Certifications
+      </a>
+      <a href="#testimonials" class="nav-link" data-section="testimonials">
+        <span class="nav-link__icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7 8h10M7 12h6m-6 8l4-4h6a2 2 0 002-2V6a2 2 0 00-2-2H7a2 2 0 00-2 2v12l-2 2z"/></svg>
+        </span>
+        Testimonials
+      </a>
+      <a href="#contact" class="nav-link" data-section="contact">
+        <span class="nav-link__icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM22 6l-10 7L2 6"/></svg>
+        </span>
+        Contact
+      </a>
+    </nav>
+    <div class="sidebar__bottom">
+      <button type="button" class="btn btn--cv" id="cvRequestOpen" aria-haspopup="dialog" aria-controls="cvRequestDialog">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Download CV
+      </button>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-toggle__icon" aria-hidden="true">
+          <svg class="icon-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </span>
+        <span class="theme-toggle__label">Light Mode</span>
+      </button>
+      <div class="sidebar__social">
+        <a href="https://linkedin.com/in/renjini-raju-ab764b242/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:renjiniraju14@gmail.com" aria-label="Email">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM22 6l-10 7L2 6"/></svg>
+        </a>
+      </div>
+      <p class="sidebar__copy">© 2026 Renjini Raju</p>
+    </div>
+  </aside>
+
+  <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteSidebar" aria-label="Open menu">
+    <span class="nav-toggle__hamburger" aria-hidden="true">☰</span>
+    <span class="nav-toggle__close" aria-hidden="true">×</span>
+  </button>
+
+  <main class="main">
+    <section id="home" class="section hero">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <h1 class="hero__title hero__title--h3">Hi, I’m <span class="text-gradient">Renjini</span></h1>
+          <p class="hero__role hero__role--h4">Junior Software Engineer</p>
+          <p class="hero__lead">
+            Developing and enhancing healthcare software products with PHP CodeIgniter while building modern full-stack projects in Python Django, combining clean UI, reliable APIs, and AI-assisted workflows.
+          </p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">View My Work
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn--ghost">Contact Me
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM22 6l-10 7L2 6"/></svg>
+            </a>
+          </div>
+          <div class="hero__social">
+            <a href="https://linkedin.com/in/renjini-raju-ab764b242/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+            <a href="mailto:renjiniraju14@gmail.com" aria-label="Email">@</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__frame">
+            <img src="photo_1.jpg" alt="Renjini Raju" width="480" height="640" loading="eager" />
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-icon" aria-hidden="true">
+              <svg width="16" height="16" fill="none" stroke="url(#g1)" stroke-width="1.5" viewBox="0 0 24 24"><defs><linearGradient id="g1" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs><path d="M16 18l2-2 2 2M8 6L6 8l2 2M9 3h6M9 21h6M5 12H3m18 0h-2M12 5V3m0 18v-2"/></svg>
+            </span>
+            <div>
+              <strong>Hands-on</strong>
+              <span>Healthcare &amp; full-stack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll to about">
+        <span class="scroll-hint__mouse"><span></span></span>
+        Scroll
+      </a>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="about__grid">
+        <div class="about__text">
+          <p class="section-label">About me</p>
+          <h2 class="section-title section-title--h4">Get to know me!</h2>
+          <p class="about__bio">
+            Junior Software Developer experienced in healthcare product development with PHP CodeIgniter and full-stack projects using Python Django, focused on clean UI, reliable APIs, and continuous technical growth.
+          </p>
+          <ul class="about__details">
+            <li><span class="detail-icon" aria-hidden="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><div><span class="detail-label">Name</span><span>Renjini Raju</span></div></li>
+            <li>
+              <span class="detail-icon" aria-hidden="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM22 6l-10 7L2 6"/></svg></span>
+              <div>
+                <span class="detail-label">Email</span>
+                <div class="about__detail-inline">
+                  <a href="mailto:renjiniraju14@gmail.com">renjiniraju14@gmail.com</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class="detail-icon" aria-hidden="true">
+                <svg
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.111.825-.261.825-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.625-5.479 5.92.43.372.823 1.102.823 2.222v3.293c0 .32.216.694.825.576C20.565 21.795 24 17.31 24 12 24 5.37 18.63 0 12 0z" />
+                </svg>
+              </span>
+              <div>
+                <span class="detail-label">GitHub</span>
+                <div class="about__github-link">
+                  <a
+                    href="https://github.com/RenjiniRaju2002"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    https://github.com/RenjiniRaju2002
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li><span class="detail-icon" aria-hidden="true"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></span><div><span class="detail-label">Availability</span><span class="text-success">Open to work</span></div></li>
+          </ul>
+          <a href="#contact" class="btn btn--secondary">Let’s talk
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM22 6l-10 7L2 6"/></svg>
+          </a>
+        </div>
+        <div class="about__visual">
+          <div class="about__photo-wrap">
+            <img src="photo_20.jpg" alt="Renjini at work" width="400" height="500" loading="lazy" />
+          </div>
+          <div class="services">
+            <article class="service-card">
+              <div class="service-card__head">
+                <div class="service-card__icon service-card__icon--1" aria-hidden="true"></div>
+                <h3>Frontend</h3>
+              </div>
+              <p>HTML, CSS, Bootstrap, JavaScript, React—responsive interfaces users rely on.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-card__head">
+                <div class="service-card__icon service-card__icon--2" aria-hidden="true"></div>
+                <h3>Backend</h3>
+              </div>
+              <p>PHP CodeIgniter, Python Django, Java—REST APIs and business logic.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-card__head">
+                <div class="service-card__icon service-card__icon--3" aria-hidden="true"></div>
+                <h3>Database</h3>
+              </div>
+              <p>MySQL and SQL for reliable data modeling and queries.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-card__head">
+                <div class="service-card__icon service-card__icon--4" aria-hidden="true"></div>
+                <h3>Delivery</h3>
+              </div>
+              <p>Debugging, optimization, Git, Postman, Agile workflows.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section skills">
+      <p class="section-label">Stack</p>
+      <h2 class="section-title section-title--h4">Technologies I work with</h2>
+      <div class="skills__row">
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--html">HTML5</span><span>HTML</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--css">CSS3</span><span>CSS</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--js">JS</span><span>JavaScript</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--react">⚛</span><span>React</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--php">PHP</span><span>PHP · CI</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--py">Py</span><span>Python · Django</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--java">J</span><span>Java</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--sql">SQL</span><span>MySQL</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--git">⎇</span><span>Git</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--vercel">▲</span><span>Vercel</span></div>
+      </div>
+      <h3 class="skills__ai-title">Hands-on with AI-assisted dev tools</h3>
+      <div class="skills__row skills__row--ai">
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--cursor">Cu</span><span>Cursor</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--kiro">Ki</span><span>Kiro</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--antigravity">AG</span><span>Antigravity</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--chatgpt">GPT</span><span>ChatGPT</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--codex">Cx</span><span>Codex</span></div>
+        <div class="skill-chip"><span class="skill-chip__logo skill-chip__logo--copilot">Cp</span><span>Copilot</span></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="projects__head">
+        <div>
+          <p class="section-label">Portfolio</p>
+          <h2 class="section-title section-title--h4">Some of my recent work</h2>
+        </div>
+        <a href="#contact" class="link-arrow">Discuss a project <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="projects__cards projects__cards--academic">
+        <article class="project-card">
+          <video class="project-card__video" controls muted playsinline preload="metadata" aria-label="Health AI Assistant demo">
+            <source src="ai health assistant.mp4" type="video/mp4" />
+          </video>
+          <div class="project-card__body">
+            <h3>Health AI Assistant</h3>
+            <p>AI-powered multilingual health assistant with chat and voice support, providing natural remedies, basic medicines, and smart health guidance.</p>
+            <div class="tags"><span>Python</span><span>Django</span><span>MySQL</span><span>AI</span><span>Voice</span><span>Multilingual</span></div>
+            <a class="project-card__link" href="https://github.com/RenjiniRaju2002/AI-health-Assistant/tree/main/AI%20Health%20Assistant" target="_blank" rel="noopener noreferrer">Details <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <video class="project-card__video" controls muted playsinline preload="metadata" aria-label="Hospital ERP (HMS) demo">
+            <source src="hrms.mp4" type="video/mp4" />
+          </video>
+          <div class="project-card__body">
+            <h3>Hospital ERP (HMS)</h3>
+            <p>End-to-end modules for live hospital workflows - patient data, usability, and performance improvements.</p>
+            <div class="tags"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span></div>
+            <a class="project-card__link" href="https://github.com/RenjiniRaju2002/health-connect-path" target="_blank" rel="noopener noreferrer">Details <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="projects__subheading">Academic projects</h3>
+
+      <div class="projects__cards projects__cards--academic">
+        <article class="project-card">
+          <video class="project-card__video" controls muted playsinline preload="metadata" aria-label="Fake review detection demo">
+            <source src="fake review.mp4" type="video/mp4" />
+          </video>
+          <div class="project-card__body">
+            <h3>Fake Review Detection</h3>
+            <p>ML pipeline to flag fraudulent reviews; Flask web UI for interaction. Pandas &amp; scikit-learn for modeling.</p>
+            <div class="tags"><span>Python</span><span>Flask</span><span>scikit-learn</span><span>Bootstrap</span></div>
+            <a class="project-card__link" href="https://github.com/RenjiniRaju2002/Fake-Review-Detection-App/tree/main/ML%20DEPLOYMENT" target="_blank" rel="noopener noreferrer">Details <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <video class="project-card__video project-card__video--voice" controls muted playsinline preload="metadata" aria-label="Voice calculator demo">
+            <source src="voice calculator.mp4" type="video/mp4" />
+          </video>
+          <div class="project-card__body">
+            <h3>Voice Calculator</h3>
+            <p>Hands-free Android experience - voice commands for quick calculations without touching the screen.</p>
+            <div class="tags"><span>Java</span><span>Android Studio</span></div>
+            <a class="project-card__link" href="https://github.com/RenjiniRaju2002/voice-calculator/tree/main/voice-calci-VoiceCalci/voice-calci-VoiceCalci" target="_blank" rel="noopener noreferrer">Details <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section experience">
+      <div class="experience__grid">
+        <div>
+          <p class="section-label">Career</p>
+          <h2 class="section-title section-title--h4">My professional journey</h2>
+          <ul class="timeline">
+            <li>
+              <span class="timeline__dot"></span>
+              <div class="timeline__meta">Nov 2025 – Present</div>
+              <h3>Junior Engineer</h3>
+              <p class="timeline__company">HODO Medical Informatics Solutions</p>
+              <p>ERP hospital management system-supporting end-to-end development and live hospital workflows.</p>
+            </li>
+            <li>
+              <span class="timeline__dot"></span>
+              <div class="timeline__meta">Apr 2025 – Oct 2025</div>
+              <h3>Development &amp; Support Intern</h3>
+              <p class="timeline__company">HODO Medical Informatics Solutions</p>
+              <p>Hospital management modules in PHP CodeIgniter; frontend &amp; backend features, patient data, debugging and performance.</p>
+            </li>
+            <li>
+              <span class="timeline__dot"></span>
+              <div class="timeline__meta">Nov 2024 – Mar 2025</div>
+              <h3>Python Django Full-Stack Intern</h3>
+              <p class="timeline__company">Luminar Technolab</p>
+              <p>Real-world projects-full-stack practice from UI to APIs and deployment habits.</p>
+            </li>
+            <li>
+              <span class="timeline__dot"></span>
+              <div class="timeline__meta">2020 – 2024</div>
+              <h3>B.Tech Computer Science &amp; Engineering</h3>
+              <p class="timeline__company">College of Engineering Aranmula</p>
+              <p>CGPA 7.2 · Kerala, India</p>
+            </li>
+          </ul>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card" style="margin-top: 90px;">
+            <div class="stat-card__head"><span class="stat-card__icon" aria-hidden="true">⏱</span><strong>Live systems</strong></div>
+            <span class="stat-card__sub">HMS &amp; ERP experience</span>
+          </div>
+          <div class="stat-card" style="margin-top: 90px;">
+            <div class="stat-card__head"><span class="stat-card__icon" aria-hidden="true">◆</span><strong>2+ academic project</strong></div>
+            <span class="stat-card__sub">Web &amp; Android projects</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__head"><span class="stat-card__icon" aria-hidden="true">◇</span><strong>Full stack</strong></div>
+            <span class="stat-card__sub">CI · Django · React</span>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__head"><span class="stat-card__icon" aria-hidden="true">✓</span><strong>Certified</strong></div>
+            <span class="stat-card__sub">Django full-stack · HackerRank Python</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section certifications">
+      <p class="section-label">Credentials</p>
+      <h2 class="section-title section-title--h4">Certifications</h2>
+      <div class="certifications__grid">
+        <article class="cert-card">
+          <div class="cert-card__media">
+            <img src="HackerRank(python_basic certificate)_page-0001.jpg" alt="HackerRank Python (Basic) certificate" loading="lazy" />
+            <a
+              class="cert-card__drive"
+              href="https://drive.google.com/file/d/1MGrGLWlagohyX4_Mj5MkAfM9P_CvcrAx/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open HackerRank Python (Basic) certificate on Google Drive"
+            >
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+          <p class="cert-card__title">HackerRank - Python (Basic)</p>
+        </article>
+        <article class="cert-card">
+          <div class="cert-card__media">
+            <img src="Python Web Development Expert(NCTT)_page-0001.jpg" alt="Python Web Development Expert certificate (NCTT)" loading="lazy" />
+            <a
+              class="cert-card__drive"
+              href="https://drive.google.com/file/d/1Uo3DbJwn1H5FpTNfg8DQGIHJMX8WBRbs/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open NCTT Python Web Development Expert certificate on Google Drive"
+            >
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+          <p class="cert-card__title">Python Web Development Expert (NCTT)</p>
+        </article>
+        <article class="cert-card">
+          <div class="cert-card__media">
+            <img src="Python Web development Expert_page-0001.jpg" alt="Python Web Development Expert certificate (Luminar)" loading="lazy" />
+            <a
+              class="cert-card__drive"
+              href="https://drive.google.com/file/d/1iXWKHriNGpHZdfuVEMCLgJC7-OL3ZJl5/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Luminar Python Web Development Expert certificate on Google Drive"
+            >
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+          <p class="cert-card__title">Python Web Development Expert (Luminar)</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section testimonials">
+      <p class="section-label">Social proof</p>
+      <h2 class="section-title section-title--h4">LinkedIn highlights</h2>
+      <div class="social-proof">
+        <figure class="social-proof__item">
+          <a
+            href="https://www.linkedin.com/posts/hodoteam_teamhodo-onam2025-technopark-activity-7372592407651155968-H5-b?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAADxAfGsB1rqc2qs0naTwMHPqYxiNW9b14fw"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-proof__thumb"
+          >
+            <img src="image-hodo.png" alt="HODO Medical Informatic Solutions — LinkedIn post: TeamHodo Onam celebration" width="560" height="640" loading="lazy" />
+            <span class="social-proof__overlay"><span>Open post on LinkedIn</span></span>
+          </a>
+          <figcaption class="social-proof__caption">HODO team post — #TeamHodo · Onam 2025</figcaption>
+        </figure>
+        <figure class="social-proof__item">
+          <div class="social-proof__thumb social-proof__thumb--static">
+            <img src="image_hodo_2.png" alt="LinkedIn experience: HODO and Luminar Technolab" width="560" height="400" loading="lazy" />
+          </div>
+          <a
+            href="https://www.linkedin.com/in/renjini-raju-ab764b242/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-proof__profile-link"
+          >View full LinkedIn profile →</a>
+        </figure>
+      </div>
+
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="contact-section__inner">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title section-title--h4">Let’s work together!</h2>
+        <form class="contact__form" id="contactForm" novalidate>
+          <input type="text" name="_gotcha" class="contact__hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <label class="sr-only" for="cname">Name</label>
+          <input id="cname" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+          <label class="sr-only" for="cemail">Email</label>
+          <input id="cemail" name="email" type="email" placeholder="Your email" autocomplete="email" required />
+          <label class="sr-only" for="cmsg">Message</label>
+          <textarea id="cmsg" name="message" rows="4" placeholder="Your message" required></textarea>
+          <button type="submit" class="btn btn--primary" id="contactSubmitBtn">Send message
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <p class="contact__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>Renjini Raju</span>
+      <span>Junior Software Engineer</span>
+      <button type="button" class="to-top" id="toTop" aria-label="Back to top">↑</button>
+    </footer>
+  </main>
+
+  <dialog class="cv-dialog" id="cvRequestDialog" aria-labelledby="cvDialogTitle">
+    <button type="button" class="cv-dialog__close" id="cvDialogCloseX" aria-label="Close dialog">×</button>
+    <h2 id="cvDialogTitle" class="cv-dialog__title">Download CV</h2>
+    <p class="cv-dialog__status"><strong>Renjini Raju</strong> — approval waiting</p>
+    <p class="cv-dialog__body">
+      If you would like a copy of my Resume, kindly contact me via email.I’ll be happy to share it with you directly.
+    </p>
+    <div class="cv-dialog__actions">
+      <a class="btn btn--primary" id="cvMailtoRequest" href="mailto:renjiniraju14@gmail.com">Send request by email</a>
+      <button type="button" class="btn btn--ghost" id="cvDialogCloseBtn">Close</button>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
