@@ -30,7 +30,7 @@
         } catch (err) {
           data = { raw: text };
         }
-        if (!res.ok) {
+        if (!res.ok || !formSubmitLooksOk(data)) {
           throw new Error((data && data.message) || "Request failed");
         }
         return data;
