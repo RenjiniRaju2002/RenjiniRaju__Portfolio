@@ -56,6 +56,32 @@
     });
   }
 
+  function openNativeContactFallback(fields) {
+    var form = document.createElement("form");
+    form.method = "POST";
+    form.action = FORMSUBMIT_POST;
+    form.target = "_blank";
+    form.style.display = "none";
+
+    Object.keys(fields).forEach(function (key) {
+      var input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = fields[key];
+      form.appendChild(input);
+    });
+
+    var captcha = document.createElement("input");
+    captcha.type = "hidden";
+    captcha.name = "_captcha";
+    captcha.value = "false";
+    form.appendChild(captcha);
+
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+  }
+
   function sendToInbox(fields) {
     var formData = new FormData();
     Object.keys(fields).forEach(function (key) {
@@ -359,10 +385,24 @@
           }
         })
         .catch(function () {
-          if (formStatus) {
-            formStatus.textContent =
-              "Could not send automatically. Please email me at " + INBOX + " or try again in a moment.";
-            formStatus.classList.add("contact__status--err");
+          try {
+            openNativeContactFallback({
+              name: name,
+              email: email,
+              message: msg,
+              _subject: "Portfolio contact: " + name,
+            });
+            if (formStatus) {
+              formStatus.textContent =
+                "Opening browser fallback submit. If blocked, please email me at " + INBOX + ".";
+              formStatus.classList.add("contact__status--ok");
+            }
+          } catch (err) {
+            if (formStatus) {
+              formStatus.textContent =
+                "Could not send automatically. Please email me at " + INBOX + " or try again in a moment.";
+              formStatus.classList.add("contact__status--err");
+            }
           }
         })
         .then(function () {
