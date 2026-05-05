@@ -1,7 +1,8 @@
 (function () {
   var INBOX = "renjiniraju14@gmail.com";
-  var FORMSUBMIT_AJAX = "https://formsubmit.co/ajax/" + INBOX;
-  var FORMSUBMIT_POST = "https://formsubmit.co/" + INBOX;
+  var FORMSUBMIT_KEY = "abf29d90cce78e444f5c13ee3bb27ae4";
+  var FORMSUBMIT_AJAX = "https://formsubmit.co/ajax/" + FORMSUBMIT_KEY;
+  var FORMSUBMIT_POST = "https://formsubmit.co/" + FORMSUBMIT_KEY;
 
   var sections = document.querySelectorAll("section[id]");
   var navLinks = document.querySelectorAll(".nav-link");
