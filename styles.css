@@ -1345,6 +1345,17 @@ body.menu-open .nav-toggle__close {
   margin-top: 0.5rem;
 }
 
+.certifications__subheading {
+  margin: 2.2rem 0 1rem;
+  font-size: var(--text-h5);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.certifications__grid--secondary {
+  margin-top: 0;
+}
+
 @media (max-width: 900px) {
   .certifications__grid {
     grid-template-columns: 1fr;
