@@ -1211,8 +1211,56 @@ body.menu-open .nav-toggle__close {
   color: var(--text-muted);
 }
 
+.project-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.15rem;
+}
+
+.project-card__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+  flex: 0 1 auto;
+  width: fit-content;
+  max-width: calc(100% - 5.5rem);
+  padding: 0.32rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(59, 130, 246, 0.55);
+  color: var(--accent-to);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.project-card__live svg {
+  flex-shrink: 0;
+}
+
+.project-card__live span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-card__live:hover {
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.project-card__live:focus-visible,
+.project-card__link:focus-visible {
+  outline: 2px solid var(--accent-to);
+  outline-offset: 2px;
+}
+
 .project-card__link {
-  align-self: flex-end;
+  flex-shrink: 0;
+  margin-left: auto;
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
